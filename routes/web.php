@@ -24,6 +24,21 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/test', function (){
+    return view('testPage');
+});
+
+
+Route::get('/create', function(){
+//    if (!Session::has('')) {
+//        return redirect('/login');
+//    } else {
+        return view('/group/createMember');
+//    }
+
+});
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
